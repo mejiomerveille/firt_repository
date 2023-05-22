@@ -15,33 +15,33 @@ use App\Http\Controllers\Api\AuthController;
 |
 */
 
-// Route::post('login','Api\AuthController@login');
+// Route::post('login','App\Http\Controllers\Api\AuthController@login');
 Route::post('/login',[AuthController::class,'login']);
 
-Route::post('register','Api\AuthController@register');
-Route::get('logout','Api\AuthController@logout');
+Route::post('register','App\Http\Controllers\Api\AuthController@register');
+Route::get('logout','App\Http\Controllers\Api\AuthController@logout');
 
 //post
-Route::post('posts/create','Api\PostsController@create')->middleware('JWTAuth');
-Route::post('posts/delete','Api\PostsController@delete')->middleware('JWTAuth');
-Route::post('posts/update','Api\PostsController@update')->middleware('JWTAuth');
-Route::get('posts','Api\PostsController@posts')->middleware('JWTAuth');
+Route::post('posts/create','App\Http\Controllers\Api\PostsController@create')->middleware('JWTAuth');
+Route::post('posts/delete','App\Http\Controllers\Api\PostsController@delete')->middleware('JWTAuth');
+Route::post('posts/update','App\Http\Controllers\Api\PostsController@update')->middleware('JWTAuth');
+Route::get('posts','App\Http\Controllers\Api\PostsController@posts')->middleware('JWTAuth');
 
 //comments
-Route::post('comments/create','Api\CommentsController@create')->middleware('JWTAuth');
-Route::post('comments/delete','Api\CommentsController@delete')->middleware('JWTAuth');
-Route::post('comments/update','Api\CommentsController@update')->middleware('JWTAuth');
-Route::post('posts/comments','Api\CommentsController@comments')->middleware('JWTAuth');
+Route::post('comments/create','App\Http\Controllers\Api\CommentsController@create')->middleware('JWTAuth');
+Route::post('comments/delete','App\Http\Controllers\Api\CommentsController@delete')->middleware('JWTAuth');
+Route::post('comments/update','App\Http\Controllers\Api\CommentsController@update')->middleware('JWTAuth');
+Route::post('posts/comments','App\Http\Controllers\Api\CommentsController@comments')->middleware('JWTAuth');
 //like
-Route::post('posts/like','Api\LikesController@like')->middleware('JWTAuth');
+Route::post('posts/like','App\Http\Controllers\Api\LikesController@like')->middleware('JWTAuth');
 //paiements
-Route::post('paiements/create','Api\PaiementsController@create')->middleware('JWTAuth');
-Route::post('paiements/delete','Api\PaiementsController@delete')->middleware('JWTAuth');
-Route::post('paiements/update','Api\PaiementsController@update')->middleware('JWTAuth');
-Route::get('commandes/paiements','Api\PaiementsController@commandes')->middleware('JWTAuth');
+Route::post('paiements/create','App\Http\Controllers\Api\PaiementsController@create')->middleware('JWTAuth');
+Route::post('paiements/delete','App\Http\Controllers\Api\PaiementsController@delete')->middleware('JWTAuth');
+Route::post('paiements/update','App\Http\Controllers\Api\PaiementsController@update')->middleware('JWTAuth');
+Route::get('commandes/paiements','App\Http\Controllers\Api\PaiementsController@commandes')->middleware('JWTAuth');
 
 //commandes
-Route::post('commandes/create','Api\CommandesController@create')->middleware('JWTAuth');
-Route::post('commandes/delete','Api\CommandesController@delete')->middleware('JWTAuth');
-Route::post('commandes/update','Api\CommandesController@update')->middleware('JWTAuth');
-Route::post('commandes','Api\CommandesController@commandes')->middleware('JWTAuth');
+Route::post('commandes/create','App\Http\Controllers\Api\CommandesController@create')->middleware('JWTAuth');
+Route::post('commandes/delete','App\Http\Controllers\Api\CommandesController@delete')->middleware('JWTAuth');
+Route::post('commandes/update','App\Http\Controllers\Api\CommandesController@update')->middleware('JWTAuth');
+Route::post('commandes','App\Http\Controllers\Api\CommandesController@commandes')->middleware('JWTAuth');
