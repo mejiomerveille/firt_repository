@@ -5,6 +5,10 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Tymon\JWTAuth\Facades\JWTAuth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use Exception;
 
 class AuthController extends Controller
 {
@@ -35,7 +39,7 @@ class AuthController extends Controller
                 $user->save();         
                 return $this->login($request);   
             }      
-            catch(Exeption $e){                                          
+            catch(Exception $e){                                          
                 return response()->json([     
                     'succes'=>false, 
                     'message'=>''.$e 
@@ -51,7 +55,7 @@ class AuthController extends Controller
                         'message'=>'Logout success'      
                     ]);        
             }       
-            catch(Exeption $e){    
+            catch(Exception $e){    
                 return response()->json([ 
                     'succes'=>false,                                                                      
                     'message'=>''.$e     
