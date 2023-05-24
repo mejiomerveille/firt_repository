@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class PostsController extends Controller
 {
@@ -57,7 +58,7 @@ class PostsController extends Controller
         }
         //check if post have photo to delete
         if($post->photo !=''){
-            storage::delete('public/posts/'.$post->photo);
+            Storage::delete('public/posts/'.$post->photo);
         }
         $post->delete();
         return response()->json([

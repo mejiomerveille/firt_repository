@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Notifications\Notifiable;
-use App\Comment;
-use App\Post;
-use App\Commande;
-use App\Paiement;
+use App\Models\Comment;
+use App\Models\Post;
+use App\Models\Commande;
+use App\Models\Paiement;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable implements JWTSubject
