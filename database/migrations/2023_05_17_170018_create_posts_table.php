@@ -18,7 +18,7 @@ return new class extends Migration
             $table->String('photo')->default('');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelate('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

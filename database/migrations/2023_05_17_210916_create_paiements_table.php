@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('statut_paiement');
             $table->timestamps();
 
-            $table->foreign('commande_id')->references('id')->on('commandes')->onDelate('cascade');
+            $table->foreign('commande_id')->references('id')->on('commandes')->onDelete('cascade');
 
         });
     }
