@@ -3,11 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use App\Comment;
-use App\User;
-use App\Like;
-use App\Commande;
-use App\Paiement;
+use App\Models\Comment;
+use App\Models\User;
+use App\Models\Like;
+use App\Models\Commande;
+use App\Models\Paiement;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
